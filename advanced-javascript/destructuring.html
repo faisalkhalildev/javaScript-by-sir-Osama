@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javaScript</title>
+</head>
+<body>
+    <h1>javaScript</h1>
+    <script>
+        //Destructureing
+
+
+
+        // Array
+        const numbers = [1, 2, 3, 4 , ["a" , "b"]]; // this is destructuring 
+
+
+        const [firstValue = 11 , secondvalue,  ,fourthValue , [firstLetter,secondLetter]  ] = numbers;
+        console.log(firstValue);
+        console.log(secondvalue);
+        console.log(fourthValue);
+        console.log(firstLetter);
+        console.log(secondLetter);
+
+
+
+    function arr(name, age) { // function destructuring 
+        console.log(name,age);
+    }
+    const user = {
+        name: "shaha",
+        age: 20,
+    } 
+    console.log(arr(user));
+
+
+
+
+
+
+    // object
+
+    const person = {
+     fullname: "shah's",
+     age: 20,
+    //  number:"92850349857",
+    address:{
+        // city:"peshawar",
+        // state:"kpk,",
+
+    },
+     
+    };   // nested destructuring
+    const {age , fullname , number = "022328343", address:{city = "peshawar",state = "kpk"}} = person; // default value have assign possable
+    console.log(age);
+    console.log(fullname);
+    console.log(number);
+    console.log(city)
+
+
+
+
+
+
+    // default parameters
+    const greet = (message = {fullanme:"shah", age:20,}) => console.log(message);
+    greet()
+    
+     greet({fullName: "shhah" , age: 20});
+    
+    
+    
+    
+
+        
+        
+    
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+//Array destructuring
+      const fruits = ["apple" , "banana" , "mango"];
+      const [firstFruit, secondFruit] = fruits;
+      console.log(firstFruit);
+      console.log(secondFruit);
+
+      //swap variable
+      let a = 5;
+      let b = 10;
+      [a,b] = [b,a]
+      console.log("a", "=" ,a , "b", "=",b);
+
+      // destructuring with default values
+      //Destructure three values from colors, provide default if a value is missing.
+      const color = ["red"];
+      const [firstvalue , secondvalue = "blue" , thirdvalue = "white"] = color;
+      console.log(firstvalue ,  secondvalue,  thirdvalue);
+
+
+      //4. Skip Items in Array
+      // Extract the first and third numbers only.
+      const number = [10,20,30];
+      const [first , ,third] = number;
+      console.log(first);
+      console.log(third);
+
+
+      //6. Basic Object Destructuring
+      //   Extract name and age from the object.
+      const person = {name:"shahFaisal", age:20, city:"lahore"};
+      const {name,age} = person;
+      console.log("Name :",name);
+      console.log("Age :",age);
+
+
+      //7. Rename Variables While Destructuring
+      //Destructure name as personName.
+      const user = {name:"AbuTalha" , email: ".py@gmail.com" };
+      const {name:personName} = user;
+      console.log(personName);
+
+
+
+      //8. Default Values in Object Destructuring
+      //Destructure title and rating with default value 5.
+      const book = {title:"JavaScript Basics"};
+      const {title , rating = 5 , } = book;
+      console.log('title: ', title);
+      console.log('rating: ', rating);
+
+
+      //9. Nested Object Destructuring
+     // Destructure the city from inside address.
+     const usersDetailed = {id:1 , address:{city:"peshawar", zip: 2500 }};
+     const {address:{city}} = usersDetailed;
+     console.log('city: ',city);
+     //End
+
+
+
+     //10. Partial Object Destructuring
+     //Destructure only brand and model from the object.
+     const laptop = {
+      brand:"Dell",
+      model:"XP 13",
+      price: 2500,
+      color:"white"
+     };
+     const {brand,model} = laptop;
+     console.log('brand: ', brand);
+     console.log('model: ', model);
+     //end
+
+
+     //11. Destructure in Function Parameters (Object)
+     //Create a function that accepts an object and destructures name and role
+     function greet(user){
+      const {name,role} = user
+      console.log('name: ', name);
+      console.log('role: ', role);
+     }
+     greet({name:"Osama" , role:"Teacher"});
+     //end
+
+
+     //12. Destructure in Function Parameters (Array)
+     //Create a function that takes an array [x, y] and returns their sum.
+     function add(coord){
+      const [x,y] = coord;
+      return x + y;
+      }
+     console.log(add([5,7]));
+     //End
+
+
+
+
+     //13. Return Multiple Values from Function
+     //Return an array of two values and destructure them on the receiving end
+     function getUserInfo(userinfo){
+       const [name,email,age] = userinfo;
+      return [name,email ,age];
+      
+
+       
+     }
+
+     const [userName,userEmail ,Userage] = getUserInfo([ "shahfaisal" ,"Shah@gmail.com" , 20])
+     console.log(userName);
+     console.log(userEmail);
+     console.log(Userage);
+     

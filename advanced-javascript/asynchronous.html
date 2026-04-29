@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchro</title>
+</head>
+<body>
+    <script>
+        //asnchrounous javaScript
+        //web api -> setTimeout , fetch, dom
+        //callback hell -> to make code asynchrouns
+        //promises -> state: pending ,fulfilled , rejected
+        //async await -> advanced versioin of callback hell or promises
+        //API (application programming interface)
+
+
+
+         //how to amke promise
+        const myPromise = new Promise((resolve,rejected) => {
+        console.log("this promise is resolve");
+        
+       })
+
+
+        // setTimiOut(() => {
+
+        // })
+
+
+       const responce =  fetch("https://jsonplaceholder.typicode.com/users").then((responce) => responce.json())
+       .then((responce) => console.log(responce)
+       ).catch((error) => console.log(error)
+       )
+       console.log('responce: ', responce);
+
+
+       
+
+
+
+
+
+      
+       setTimeout(() => {
+        console.log("console from set time out");
+        
+       }, );
+       console.log("console after fetch promise");
+
+
+
+
+
+      myPromise.then((reponse) => console.log(reponse)
+      )
+       
+    </script>
+</body>
+</html>

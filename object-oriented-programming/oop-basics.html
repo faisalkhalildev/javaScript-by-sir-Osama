@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   //what is object
+   //an objective is a collection of key value pair
+    // function Car(modal,brand){
+    //     this.modal = modal;
+    //     this.brand = brand;
+
+    // };
+
+
+
+    
+
+    // Class car
+    class Car{
+        constructor(brand,modal){
+            this.brand = brand;
+            this.modal = modal;
+        }
+        yom = 200;  //one property
+
+        drive(){
+            console.log(`Driving ${this.modal}`);
+            
+        }
+    }
+   const myCar = new Car ("toyata","fourtuner")
+   console.log('myCar: ', myCar);
+   myCar.drive()
+
+//  OOPs --> 1. inheritance , 2.polymorphism , 3.Encapsulation , 4.Abstruction
+    // what is inheritance
+        class ElecticCar extends Car {
+            constructor(batterLife ,brand ,modal)  {
+                super(brand,modal)
+                this.batterLife = batterLife;
+            }
+        }
+
+    const myElectricCar = new ElecticCar(90,"tesla" , "modal x");
+    console.log('myElectricCar: ', myElectricCar);
+    myElectricCar.drive();
+
+
+
+    class Human{
+        constructor(gender , height , weight){
+        this.gender = gender;
+        this.height = height;
+        this.weight = weight;
+        }
+        walking(){
+        console.log(`persion is walking}`);
+        
+        }
+        talking(){
+         console.log("talking");
+         
+        }
+    }
+
+    class Person extends Human {
+        constructor(gender,height,weight,name){
+             super(gender,height,weight)
+             this.name = name;
+        }
+       
+    }
+    const Myname = new Human("ali" , 5.8 , 78 , "male")
+    console.log('Myname: ', Myname);
+
+    Myname.walking();
+    Myname.talking();
+
+
+
+    // Polymorphism --1.function overloading 2.function overriding
+    // function overloading
+    function walking(steps){
+        console.log(steps);
+        
+    }
+    function talking(steps ,kms){
+        console.log(steps,kms);
+        
+    }
+
+    //encapsulation
+    // kese be chez ko hide carna security dena 
+    // 
+    class Bank{
+        #balance =0;
+        deposit(amount){
+           return this.#balance += amount;
+        }
+        getBalance() {
+        return this.#balance;
+    }
+    } 
+
+    
+   const myAccount = new Bank()
+   console.log( myAccount);
+   myAccount.getBalance();
+   myAccount.deposit(50_000_000);
+   console.log(myAccount.getBalance());
+   
+   
+
+    </script>
+</body>
+</html>

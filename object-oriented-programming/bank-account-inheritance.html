@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javaScript</title>
+</head>
+<body>
+    <script>
+        class Bank{
+        constructor(bankname){
+            this.bankname = bankname;
+        }
+        found(){
+            console.log("this bank was found in 1899")
+        }
+        }
+        class Branch extends Bank{
+        constructor(bankname,branchNumber){
+            super(branchNumber)
+            this.branchNumber = branchNumber;
+            
+
+        }
+        bankname(){
+            console.log("HBL");
+            
+        }
+        
+        }
+        class Account extends Branch{
+        constructor(bankname,branchNumber,brancharea){
+        super(brancharea)
+        this.brancharea = brancharea;   
+
+        }
+
+        }
+        
+      const bank = new Bank("allied")
+      console.log('bank: ', bank);
+
+
+      const branch = new Branch(122, "allied");
+      console.log('branch: ', branch);
+
+
+      const account = new Branch("UOP" , 122,"allied")
+      console.log('account: ', account);
+
+    </script>
+</body>
+</html>

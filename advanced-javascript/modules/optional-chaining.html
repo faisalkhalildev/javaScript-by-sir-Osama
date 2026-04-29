@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // optional
+      const person = {
+        fullname: "shah",
+        address: {
+          city: {
+            dialcode: "+092",
+            address: "peshawar",
+          },
+        },
+      };
+      console.log(person?.address?.city);
+
+
+
+
+      // classes
+      class Human {
+        constructor (height,weight){
+            this.height = height;
+            this.weight = weight;
+        }
+      }
+      const h1 = new Human(5.5,60)
+      console.log('h1: ', h1);
+
+      class Person extends Human {
+        
+        constructor(hands, legs,skincolor){
+            super(hands, legs)
+            this.skincolor = skincolor;
+        }
+      }
+      const p1 = new Person(1,2,"light")
+      console.log('p1: ', p1);
+
+
+      //oops --> object oriented programming
+      //basic 4 concept --> Inheritance , Encapsulation , Polimorphism,Abstaction                                                           
+    </script>
+  </body>
+</html>

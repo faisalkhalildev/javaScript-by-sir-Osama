@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread</title>
+</head>
+<body>
+    <h1> Spread Operator</h1>
+    <script>
+        const object1 = {
+            
+            Name:"shah faisal",
+            age: 20,
+            
+        };
+        const object2 = {
+            ...object1,
+            Name: "haroon",
+            age: 22,
+            
+        }
+        const object3 = {
+            ...object1,
+            Name: 'JavaScript',
+        }
+        
+        
+        console.log('object1: ', object1);
+        console.log('object2: ', object2);
+        console.log('object3: ', object3);
+
+
+
+        const arr = [1,2,3,4];
+        const [{a,b,c,d}] = arr;
+        console.log('arr: ', arr);
+        
+    </script>
+</body>
+</html>

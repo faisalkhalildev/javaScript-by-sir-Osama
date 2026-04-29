@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javaScript</title>
+</head>
+<body>
+    <h1>javaScript</h1>
+    <script>
+        //local storage
+        // localStorage.setItem("name" , "shah");
+        // localStorage.getItem("shah");
+        // // localStorage.removeItem("name")
+        // localStorage.length;
+        // console.log('length: ',localStorage.length);
+        // localStorage.clear();
+        
+        //Session storage
+        // sessionStorage.setItem("fullname","dawood");
+        // sessionStorage.getItem("fullname");
+
+
+
+        //what is API 
+        //Application programming interface
+         //services | REST APIS
+         //JSON --> Javascript object notation
+         //API MethodS --> GET , POST , PUT-->CHANGES , PATCH-->YOU CHANGE AND SAVE IT , DELETE --> WHEN YOU DELETE SOME THING;
+
+         //library based --> axios;
+
+
+         //OS -->
+
+
+
+        //what is JSON
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+
+
+
+        const person = {
+            fullname: "shah",
+            age: 20
+        }
+
+        const {age , ...restObj} = person;
+        console.log(age);
+        console.log(age,...restObj);
+
+
+
+
+        function outer(){
+            return function inner(){
+                return a+b;
+            };
+        }
+
+        const num = outer(10);
+        console.log(inner(20));
+        
+    </script>
+</body>
+</html>

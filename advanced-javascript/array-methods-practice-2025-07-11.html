@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+<body>
+    <script>
+       const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const getNumbers = numbers.filter((item) => item > 11);
+console.log("getNumbers: ", getNumbers);
+
+const findNumber = numbers.find((item) => item > 11);
+console.log("findNumber: ", findNumber);
+
+const students = ["abdul salam", "ali", "ahmed", "osama", "abdul salam"];
+
+// declarative way
+const findStudent = students.find((item) => item === "abdul salam ");
+console.log("findStudent: ", findStudent);
+
+const squaredNmbers = numbers.map((item) => item * item);
+console.log("squaredNmbers: ", squaredNmbers);
+
+// reduce
+const sum = numbers.reduce((accumulator, currentValue) => {
+  accumulator += currentValue;
+  return accumulator;
+}, 0);
+console.log("sum: ", sum);
+
+// let total = 0;
+
+// for (let i = 0; i < numbers.length; i++) {
+//   const element = numbers[i];
+//   total += element;
+// }
+
+// console.log("total: ", total);
+
+const orders = [
+  { price: 100, paymentMethod: "cash" },
+  { price: 200, paymentMethod: "online" },
+  { price: 400, paymentMethod: "cash" },
+  { price: 300, paymentMethod: "cash" },
+  { price: 599, paymentMethod: "online" },
+];
+
+const result = {
+  cash: {
+    total: 0,
+    count: 0,
+  },
+  online: {
+    total: 0,
+    count: 0,
+  },
+};
+
+for (let i = 0; i < orders.length; i++) {
+  const element = orders[i];
+  if (element.paymentMethod === "cash") {
+    result.cash.total += element.price;
+    result.cash.count += 1;
+  } else {
+    result.online.total += element.price;
+    result.online.count += 1;
+  }
+}
+
+console.log("result: ", result);
+
+const finalResult = orders.reduce(
+  (acc, curr) => {
+    if (curr.paymentMethod === "cash") {
+      acc.cash.total += curr.price;
+      acc.cash.count += 1;
+      acc.cash.orderValues.push(curr.price);
+    } else {
+      acc.online.total += curr.price;
+      acc.online.count += 1;
+      acc.online.orderValues.push(curr.price);
+    }
+    return acc;
+  },
+  {
+    cash: { total: 0, count: 0, orderValues: [] },
+    online: { total: 0, count: 0, orderValues: [] },
+  }
+);
+
+console.log("finalResult: ", finalResult);
+
+
+    </script>
+</body>
+</html>
